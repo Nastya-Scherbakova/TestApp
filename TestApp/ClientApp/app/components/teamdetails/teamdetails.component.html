@@ -1,0 +1,23 @@
+<h1 *ngIf="team">{{ team.name }}</h1>
+
+<p>Team members</p>
+
+<p *ngIf="!members"><em>Loading...</em></p>
+<button class="btn btn-success" (click)="show=true">+</button>
+<div *ngIf="show">
+    <input [(ngModel)]="text"/> <button class="btn btn-success" (click)="add(text); show=false">Add</button>
+</div>
+<table class='table' *ngIf="members">
+    <thead>
+        <tr>
+            <th>Name</th>
+           
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let member of members">
+            <td>{{ member.name }}</td>
+           
+        </tr>
+    </tbody>
+</table>

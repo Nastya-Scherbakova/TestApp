@@ -1,0 +1,27 @@
+<h1>Teams table</h1>
+<p>See the teams list.</p>
+<p *ngIf="!teams"><em>Loading...</em></p>
+
+<table class='table' *ngIf="teams">
+    <thead>
+        <tr>
+            <th>Name</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let team of teams">
+
+            <td>
+                <div [routerLinkActive]="['link-active']">
+                    <a [routerLink]="['/teamdetails/'+team]">
+                        {{ team }}
+                    </a>
+                </div>
+
+                
+            </td>
+
+        </tr>
+    </tbody>
+</table>
